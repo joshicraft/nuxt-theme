@@ -1,0 +1,11 @@
+.badge
+.is-badge-xsmall[data-badge=""]::after {
+    width: 0.35rem;
+}
+.badge.is-badge-xsmall[data-badge]::after {
+  top: calc(0px - ( 0.35rem / 2 ));
+  left: calc(100% - ( 0.35rem / 2 ));
+  min-height: 0.35rem;
+  min-width: 0.35rem;
+  width: 0.35rem;
+}

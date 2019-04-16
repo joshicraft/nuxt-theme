@@ -1,0 +1,53 @@
+{
+  "name": "source",
+  "version": "0.1.0",
+  "description": "Source nuxt project",
+  "author": "Thembiotic.com",
+  "private": true,
+  "scripts": {
+    "dev": "set HOST=localhost:8000 && nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.5",
+    "@fortawesome/fontawesome-free-brands": "^5.0.10",
+    "@fortawesome/fontawesome-free-regular": "^5.0.10",
+    "@fortawesome/fontawesome-free-solid": "^5.0.10",
+    "@fortawesome/vue-fontawesome": "0.0.22",
+    "@nuxtjs/axios": "^5.3.1",
+    "@nuxtjs/blog": "0.0.1-6",
+    "@nuxtjs/google-analytics": "^2.0.2",
+    "@nuxtjs/sitemap": "0.0.3",
+    "@nuxtjs/vendor": "^1.1.4",
+    "@xkeshi/vue-countdown": "^0.6.0",
+    "aos": "^2.2.0",
+    "bulma": "^0.7.0",
+    "bulma-badge": "^1.0.1",
+    "bulma-pricingtable": "^1.2.0",
+    "bulma-ribbon": "^1.0.2",
+    "lazysizes": "^4.0.2",
+    "nuxt": "^1.0.0",
+    "nuxt-buefy": "0.0.4",
+    "tachyons-sass": "^4.9.2",
+    "vue-filter": "^0.2.5",
+    "vue-googlemaps": "0.0.6",
+    "vue-markdown": "^2.2.4",
+    "vue-moment": "^3.2.0",
+    "vue-mq": "^0.2.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "eslint": "^4.19.1",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.4.0",
+    "node-sass": "^4.8.3",
+    "sass-loader": "^6.0.7",
+    "sounds-webpack-plugin": "0.0.2",
+    "webpack-node-externals": "^1.7.2"
+  }
+}

@@ -1,0 +1,36 @@
+.footer {
+  padding: 6rem 1.5rem 2rem;
+  color: #838383;
+  h1,h2,h3,h4,h5,h6 {
+    color: #373737;
+  }
+
+  a {
+    color: inherit;
+    transition: color .3s ease;
+    &:hover {
+      color: #373737;
+    }
+  }
+
+  ul,
+  .footer-menu-list {
+    list-style: none;
+    li {
+      margin-bottom: 1em;
+      font-weight: 500;
+    }
+  }
+}
+
+.content {
+  p { opacity: 0.8; }
+}
+
+// Columns
+.columns.is-variable .column {
+    // padding-left: var(--columnGap);
+    // padding-right: var(--columnGap);
+    padding-top: var(--columnGap);
+    padding-bottom: var(--columnGap);
+}

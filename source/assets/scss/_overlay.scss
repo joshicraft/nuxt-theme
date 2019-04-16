@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+@import "./variables";
+@import "~bulma/sass/utilities/derived-variables";
+
+a.overlay {
+  &:hover {
+    &:before { opacity: 0.5; }
+  }
+}
+
+.overlay {
+  &:before {
+    border-radius: 0.5rem;
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 75%;
+    background: -webkit-gradient(linear,left top,left bottom,from(transparent),to(rgba(0,0,0,0.8)));
+    background: linear-gradient(to bottom,transparent 0%,rgba(0,0,0,0.8) 100%);
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 300ms ease;
+    transition: 300ms ease;
+  }
+  .overlay-content {
+    position: absolute;
+    z-index: 2;
+    color: $white;
+    opacity: 0.85;
+    time {
+      font-size: 0.85rem;
+    }
+  }
+}
+
+// Placeholder
+%overlay-bg {
+   &:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    // background-color: rgba(255,255,255,1);
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 300ms ease;
+    transition: 300ms ease;
+    opacity: 0;
+  }
+}
+
+.overlay-bg-white {
+  @extend %overlay-bg;
+  &:before {
+    // background-color: white;
+    background-image: linear-gradient(90deg, transparent 0%, white 50%);
+  }
+  > * { z-index: 2; }
+}
+
+@media #{$breakpoint-not-small} {
+  .overlay-bg-white {
+    background-size: cover !important;
+    &::before {
+      background-image: linear-gradient(90deg, white 0%, white 100%);
+      opacity: 0.8;
+    }
+  }
+}
+@media #{$breakpoint-medium} {
+  .overlay-bg-white {
+    &::before { opacity: 0.65; }
+  }
+}
+@media #{$breakpoint-large} {
+  .overlay-bg-white {
+    &::before { opacity: 0; }
+  }
+}

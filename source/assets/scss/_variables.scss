@@ -1,0 +1,59 @@
+@import "~bulma/sass/utilities/functions";
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/derived-variables";
+
+$family-sans-serif: "Open Sans";
+$primary: #6d3498;
+$primary-invert: findColorInvert($primary);
+$secondary: #ff7043;
+$secondary-invert: findColorInvert($secondary);
+
+$background: #f5f5f5;
+$footer-background-color: $background;
+
+// $navbar-height: 4.25rem;
+
+$link: $primary;
+
+$gap:  32px;
+$tablet: 769px;
+$desktop:  960px + (2 * $gap);
+$widescreen: 1152px + (2 * $gap);
+// $fullhd: 1344px + (2 * $gap);
+$fullhd: 1136px + (2 * $gap);
+
+// Tachyons
+$mobile-l: 425px;
+$mobile-m: 375px;
+$mobile-s: 320px;
+
+$breakpoint-mobile-s: 'screen and (max-width: #{$mobile-s})';
+$breakpoint-mobile-m: 'screen and (min-width: #{$mobile-s+1}) and (max-width: #{$mobile-m})';
+$breakpoint-mobile-l: 'screen and (min-width: #{$mobile-m+1}) and (max-width: #{$mobile-l})';
+
+$breakpoint-not-small: 'screen and (max-width: #{$tablet})';
+// $breakpoint-medium: 'screen and (min-width: #{$tablet}) and (max-width: #{$desktop})';
+$breakpoint-medium: 'screen and (min-width: #{$tablet})';
+// $breakpoint-large: 'screen and (min-width: #{$desktop}+1) and (max-width: #{$widescreen})';
+$breakpoint-large: 'screen and (min-width: #{$desktop})';
+
+
+// 4. Setup your Custom Colors
+$linkedin: #0077b5;
+$linkedin-invert: findColorInvert($linkedin);
+$twitter: #55acee;
+$twitter-invert: findColorInvert($twitter);
+$github: #333;
+$github-invert: findColorInvert($github);
+$selago: #f3f5fd;
+$selago-invert: findColorInvert($selago);
+
+$addColors: (
+  "primary": ($primary, $primary-invert),
+  "secondary": ($secondary, $secondary-invert),
+  "selago": ($selago, $selago-invert),
+  "twitter": ($twitter, $twitter-invert),
+  "linkedin": ($linkedin, $linkedin-invert),
+  "github": ($github, $github-invert)
+);
+$colors: map-merge($colors, $addColors);

@@ -1,0 +1,111 @@
+figure.image.overlay-hover {
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    transition: background 0.35s ease;
+  }
+
+  &.figcaption-dark {
+
+    &::before { background-color: transparent; }
+    figcaption {
+      background: rgba(0,0,0,0.65);
+      color: #fff;
+
+      p.description { color: #3c4a50; }
+      p.icon-links a { color: #fff; }
+    }
+  }
+
+  figcaption {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    padding: .5em 1em;
+    // height: 4.375em;
+    background: rgba(255,255,255,0.85);
+    color: #3c4a50;
+    width: 100%;
+    transition: transform 0.35s;
+    transform: translate3d(0,100%,0);
+
+    h2, h3 {
+      transition: transform 0.35s;
+      transform: translate3d(0,200%,0);
+    }
+
+    p.description {
+      position: absolute;
+      // bottom: 8em;
+      bottom: 100%;
+      padding: 2em;
+      color: #fff;
+      text-transform: none;
+      letter-spacing: 1px;
+      font-size: 90%;
+      opacity: 0;
+      transition: opacity 0.35s;
+      -webkit-backface-visibility: hidden;
+    }
+    p.icon-links {
+      margin-left: auto;
+      a {
+        float: right;
+        color: #3c4a50;
+        font-size: 1.4em;
+        transition: transform 0.35s;
+        transform: translate3d(0,200%,0);
+      }
+    }
+
+  }
+
+  &.figcaption-primary:hover {
+    &::before { background-color: rgba(255,255,255,.85); }
+     figcaption {
+      background: $primary;
+      color: #fff;
+      p.description { color: $primary; }
+      p.icon-links a { color: #fff; }
+    }
+  }
+
+  &.figcaption-dark:hover {
+    &::before {
+      background-color: rgba(255,255,255,.65);
+    }
+  }
+
+  &:hover {
+
+    &::before {
+      background-color: rgba(0,0,0,.5);
+    }
+    figcaption {
+      transform: translate3d(0,0,0);
+      h2 {
+        transition-delay: 100ms;
+        transform: translate3d(0,0,0);
+      }
+      h3 {
+        transition-delay: 200ms;
+        transform: translate3d(0,0,0);
+      }
+      p.description { opacity: 1; }
+      p.icon-links a {
+        transform: translate3d(0,0,0);
+        &:first-child { transition-delay: 250ms; }
+        &:nth-child(2) { transition-delay: 300ms; }
+        &:nth-child(3) { transition-delay: 350ms; }
+      }
+    }
+  }
+}
