@@ -87,6 +87,7 @@ module.exports = {
     '~plugins/vue-moment',
     '~plugins/vue-filter',
     '~plugins/vue-countdown',
+    '~plugins/global-mixins',
     { src: '~plugins/vue-googlemaps', ssr: false },
     { src: '~plugins/vue-mq', ssr: false },
     { src: '~plugins/lazysizes', ssr: false },

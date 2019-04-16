@@ -303,7 +303,7 @@
     backgroundSize: 'contain',
     backgroundPosition: "left",
     backgroundRepeat: "no-repeat",
-    backgroundImage: "url('/img/artboard.png')"
+    backgroundImage: `url('${this.imgSrc('artboard')}')`
   };
 
   export default {
@@ -331,7 +331,8 @@
     },
     async asyncData({ app }) {
       try {
-        const blogs = await app.$axios.$get('/blogs?_expand=user&_sort=createdAt&_order=desc')
+        // const blogs = await app.$axios.$get('/blogs?_expand=user&_sort=createdAt&_order=desc')
+        const blogs = await app.$axios.$get('/static/json/')
         return { blogs }
       } catch (error) {
         // console.log("err", error);
